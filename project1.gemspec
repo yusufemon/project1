@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 	s.description = "Simple ruby gem"
 	s.authors = ["Yusuf Imam Itsari"]
 	s.email = 'yusuf.imam@bukalapak.com'
-	s.files = ["Rakefile", "lib/project1.rb", "lib/project1/user.rb"]
+	s.files = ["Rakefile", "lib/project1.rb"]
 	s.test_files = ["test/test_project1.rb"]
 	s.require_paths = ["lib"]
 end

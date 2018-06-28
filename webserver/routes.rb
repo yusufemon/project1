@@ -1,8 +1,10 @@
 require 'sinatra'
-require 'project1.rb'
+require 'project1'
+
+pr1 = Project1.new
 
 get '/user' do
-  Project1.getUser.join(",")
+  pr1.getUser.join(",")
 end
 
 post '/user' do
@@ -10,7 +12,7 @@ post '/user' do
   name = params[:name]
   balance = params[:balance]
 
-  Project1.insertUser(id,name,balance)
+  pr1.insertUser(id,name,balance)
 end
 
 put '/user' do
@@ -18,11 +20,11 @@ put '/user' do
   name = params[:name]
   balance = params[:balance]
 
-  Project1.updateUser(id,name,balance)
+  pr1.updateUser(id,name,balance)
 end
 
 delete '/user' do
   id = params[:id]
 
-  Project1.deleteUser(id)
+  pr1.deleteUser(id)
 end

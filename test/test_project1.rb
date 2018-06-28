@@ -7,14 +7,17 @@ class Project1Test < Test::Unit::TestCase
   # end
 
   def test_insert
-    assert_equal "success inserting user", Project1.insertUser(1,"dummy",10000)
+    p1 = Project1.new
+    assert_equal true, p1.insertUser(99,"dummy",10000), "expected to be true"
   end
 
   def test_update
-    assert_equal "success updating user", Project1.updateUser(1,"dummies",100000)
+    p1 = Project1.new
+    assert_equal true, p1.updateUser(99,"dummies",100000), "expected to be true"
   end
 
   def test_delete
-    assert_equal "success deleting user", Project1.deleteUser(1)
+    p1 = Project1.new
+    assert_equal true, p1.deleteUser(99), "expected to be true"
   end
 end

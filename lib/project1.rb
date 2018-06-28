@@ -1,10 +1,13 @@
-# require 'project1/user'
 require 'sqlite3'
-require 'pp'
+require 'logger'
 
 class Project1
 	# Class for CRUD user
-  @@db = SQLite3::Database.new 'project1.db'
+  def initialize
+    @db = SQLite3::Database.new 'project1.db'
+    @logger = Logger.new(STDOUT)
+    @logger.info("Project1 initialize")
+  end
 
 	# Example:
   # 	>> pr1 = Project1.new
@@ -13,9 +16,10 @@ class Project1
   # Arguments:
   #   none
 
-	def self.getUser
-		data = @@db.execute("select * from users")
-		pp data
+	def getUser
+		data = @db.execute("select * from users")
+    @logger.info(data)
+    data
 	end
 
 	# Example:
@@ -27,9 +31,9 @@ class Project1
   #   name: (String)	
   #   balance: (integer)
 
-	def self.insertUser(id,name,balance)
-		@@db.execute("insert into users values (#{id},'#{name}',#{balance})")
-		puts 'success inserting user'
+	def insertUser(id,name,balance)
+		@db.execute("insert into users values (#{id},'#{name}',#{balance})")
+		@logger.info("success inserting user")
 	end
 
 	# Example:
@@ -41,9 +45,9 @@ class Project1
   #   name: (String)
   #   balance: (integer)
 
-	def self.updateUser(id,name,balance)
-		@@db.execute("update users set name=\"#{name}\", balance=#{balance} where id=#{id}")
-		puts 'success updating user'
+	def updateUser(id,name,balance)
+		@db.execute("update users set name=\"#{name}\", balance=#{balance} where id=#{id}")
+		@logger.info("success updating user")
 	end
 
 	# Example:
@@ -53,9 +57,9 @@ class Project1
   # Arguments:
   #   id: (integer)
 
-	def self.deleteUser(id)
-		@@db.execute("delete from users where id=#{id}")
-		puts 'success deleting user'
+	def deleteUser(id)
+		@db.execute("delete from users where id=#{id}")
+		@logger.info("success deleting user")
 	end
 end
 
