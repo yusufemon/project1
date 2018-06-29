@@ -25,7 +25,7 @@ class Project1
 	# Example:
   # 	>> pr1 = Project1.new
   #   >> pr1.insertUser(id,name,balance)
-  #   => print all user in database
+  #   => true
   # Arguments:
   #   id: (integer)
   #   name: (String)	
@@ -38,8 +38,8 @@ class Project1
 
 	# Example:
   # 	>> pr1 = Project1.new
-  #   >> pr1.getUser
-  #   => print all user in database
+  #   >> pr1.updateUser
+  #   => true
   # Arguments:
   #   id: (integer)
   #   name: (String)
@@ -52,8 +52,8 @@ class Project1
 
 	# Example:
   # 	>> pr1 = Project1.new
-  #   >> pr1.getUser
-  #   => print all user in database
+  #   >> pr1.deleteUser
+  #   => true
   # Arguments:
   #   id: (integer)
 

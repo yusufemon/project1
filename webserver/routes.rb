@@ -1,10 +1,12 @@
 require 'sinatra'
 require 'project1'
+require 'logger'
 
-pr1 = Project1.new
+set :pr1, Project1.new
+set :logger, Logger.new(STDOUT)
 
 get '/user' do
-  pr1.getUser.join(",")
+  settings.pr1.getUser.join(",")
 end
 
 post '/user' do
@@ -12,7 +14,8 @@ post '/user' do
   name = params[:name]
   balance = params[:balance]
 
-  pr1.insertUser(id,name,balance)
+
+  settings.pr1.insertUser(id,name,balance)
 end
 
 put '/user' do
@@ -20,11 +23,11 @@ put '/user' do
   name = params[:name]
   balance = params[:balance]
 
-  pr1.updateUser(id,name,balance)
+  settings.pr1.updateUser(id,name,balance)
 end
 
 delete '/user' do
   id = params[:id]
 
-  pr1.deleteUser(id)
+  settings.pr1.deleteUser(id)
 end
