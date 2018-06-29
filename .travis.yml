@@ -9,7 +9,8 @@ branches:
     - develop
 
 before_install:
-  - gem install bundler
+  - gem install bundle
+  - gem build project1.gemspec
   - rm Gemfile.lock
 
 install:
