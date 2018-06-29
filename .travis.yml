@@ -14,7 +14,7 @@ addons:
       - sqlite3
 
 before_install:
-  - sqlite3 project1.db "create table users (id integer primary key, name varchar not null, balance integer)" "insert into users values(1,'andi',10000)" ""
+  - sqlite3 project1.db "create table users (id integer primary key, name varchar not null, balance integer)"
   - gem install bundle
   - gem build project1.gemspec
   - rm Gemfile.lock
