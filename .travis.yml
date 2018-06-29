@@ -1,8 +1,20 @@
 language: ruby
 
-before_install: gem install bundler
-
-script: bundle exec rake
-
 rvm:
   - 2.4.1
+
+branches:
+  only:
+    - master
+    - develop
+
+before_install:
+  - gem install bundler
+  - rm Gemfile.lock
+
+install:
+  - bundle install
+  - gem install project1-0.0.0.gem
+
+script: 
+  - rake test

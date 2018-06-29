@@ -1,0 +1,33 @@
+PATH
+  remote: .
+  specs:
+    project1 (0.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mustermann (1.0.2)
+    rack (2.0.5)
+    rack-protection (2.0.3)
+      rack
+    rack-test (1.0.0)
+      rack (>= 1.0, < 3)
+    sinatra (2.0.3)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.3)
+      tilt (~> 2.0)
+    sqlite3 (1.3.13)
+    tilt (2.0.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  project1!
+  rack-test
+  sinatra
+  sqlite3
+
+BUNDLED WITH
+   1.16.2
