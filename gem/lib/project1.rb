@@ -31,7 +31,7 @@ class Project1
   #   name: (String)  
   #   balance: (integer)
 
-  def insertUser(id,name,balance)
+  def insertUser(id, name, balance)
     @db.execute("insert into users values (#{id},'#{name}',#{balance})")
     @logger.info("success inserting user")
   end
@@ -45,7 +45,7 @@ class Project1
   #   name: (String)
   #   balance: (integer)
 
-  def updateUser(id,name,balance)
+  def updateUser(id, name, balance)
     @db.execute("update users set name=\"#{name}\", balance=#{balance} where id=#{id}")
     @logger.info("success updating user")
   end
